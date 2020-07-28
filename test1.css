@@ -1,0 +1,72 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+.head {
+  background: #ede7f6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  grid-area: 1 / 1 / 1 / 6;
+  justify-self: stretch;
+  text-align: center;
+}
+
+.gap {
+  grid-area: 12 / 1 / 12 / 6;
+}
+
+.collabel {
+  background: #ede7f6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  grid-area: 1 / 1 / 1 / 6;
+  justify-self: stretch;
+  text-align: center;
+}
+
+#totalrow {
+  background: white;
+  border: thick black;
+}
+
+.total {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: thick black solid;
+}
+
+.cell {
+  background: #ede7f6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+#skip {
+  text-align: center;
+  background-color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  background-color: #ede7f6;
+  color: darkblue;
+  -moz-appearance: textfield;
+}
