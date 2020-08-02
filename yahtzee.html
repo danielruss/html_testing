@@ -1,0 +1,189 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="yahtzee.css" />
+    <script src="yahtzee.js"></script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class="rowlabel" colspan="2">UPPER SECTION</td>
+        <td class="collabel">How<br>to score</td>
+        <td class="collabel"><input class="cellInput" type="text" value="Player 1"></td>
+        <td class="collabel"><input class="cellInput" type="text" value="Player 2"></td>
+        <td class="collabel"><input class="cellInput" type="text" value="Player 3"></td>
+        <td class="collabel"><input class="cellInput" type="text" value="Player 4"></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Aces <span class="die">&#9856;</span> = 1</td>
+        <td class="help">Count and Add Only Aces<br></td>
+        <td><input class="cellInput" type="number" id="p1_1" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_1" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_1" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_1" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Twos <span class="die">&#9857;</span> = 2</td>
+        <td class="help">Count and Add Only Twos<br></td>
+        <td><input class="cellInput" type="number" id="p1_2" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_2" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_2" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_2" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Threes <span class="die">&#9858;</span> = 3</td>
+        <td class="help">Count and Add Only Threes<br></td>
+        <td><input class="cellInput" type="number" id="p1_3" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_3" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_3" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_3" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Fours <span class="die">&#9859;</span> = 4</td>
+        <td class="help">Count and Add Only Fours<br></td>
+        <td><input class="cellInput" type="number" id="p1_4" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_4" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_4" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_4" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Fives <span class="die">&#9860;</span> = 5</td>
+        <td class="help">Count and Add Only Fives<br></td>
+        <td><input class="cellInput" type="number" id="p1_5" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_5" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_5" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_5" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Sixes <span class="die">&#9861;</span> = 6</td>
+        <td class="help">Count and Add Only Sixes<br></td>
+        <td><input class="cellInput" type="number" id="p1_6" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_6" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_6" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_6" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Total Score</td>
+        <td class="help">&#x2192;</td>
+        <td class="calccell" id="p1_uts"></td>
+        <td class="calccell" id="p2_uts"></td>
+        <td class="calccell" id="p3_uts"></td>
+        <td class="calccell" id="p4_uts"></td>
+      </tr>
+      <tr>
+        <td class="rowlabel">Bonus</td>
+        <td class="c2">if the score<br />is above 63</td>
+        <td class="help">score 35</td>
+        <td class="calccell" id="p1_bonus"></td>
+        <td class="calccell" id="p2_bonus"></td>
+        <td class="calccell" id="p3_bonus"></td>
+        <td class="calccell" id="p4_bonus"></td>
+      </tr>
+      <tr>
+        <td class="rowlabel">Total</td>
+        <td class="c2">of upper<br />section</td>
+        <td class="help">&#x2192;</td>
+        <td class="calccell" id="p1_us"></td>
+        <td class="calccell" id="p2_us"></td>
+        <td class="calccell" id="p3_us"></td>
+        <td class="calccell" id="p4_us"></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">LOWER SECTION</td>
+        <td colspan="5">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">3 of a kind</td>
+        <td class="help">Add Total<br>of All Dice</td>
+        <td><input class="cellInput" type="number" id="p1_3oak" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_3oak" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_3oak" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_3oak" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">4 of a kind</td>
+        <td class="help">Add Total<br>of All Dice</td>
+        <td><input class="cellInput" type="number" id="p1_4oak" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_4oak" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_4oak" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_4oak" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Full House</td>
+        <td class="help">score 25</td>
+        <td><input class="cellInput" type="number" id="p1_fh" min=25 max=25></input></td>
+        <td><input class="cellInput" type="number" id="p2_fh" min=25 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_fh" min=25 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_fh" min=25 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel">Sm. Straight</td>
+        <td class="c2">Sequence<br />of 4</td>
+        <td class="help">score 30</td>
+        <td><input class="cellInput" type="number" id="p1_ss" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_ss" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_ss" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_ss" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel">Lg. Straight</td>
+        <td class="c2">Sequence<br />of 5</td>
+        <td class="help">score 40</td>
+        <td><input class="cellInput" type="number" id="p1_ls" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_ls" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p3_ls" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p4_ls" min=0 max=30></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel">Yahtzee</td>
+        <td class="c2">5<br />of a kind</td>
+        <td class="help">score 50</td>
+        <td><input class="cellInput" type="number" id="p1_ytz" min=0 max=50></input></td>
+        <td><input class="cellInput" type="number" id="p2_ytz" min=0 max=50></input></td>
+        <td><input class="cellInput" type="number" id="p3_ytz" min=0 max=50></input></td>
+        <td><input class="cellInput" type="number" id="p4_ytz" min=0 max=50></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Chance</td>
+        <td class="help">Score Total<br>of All 5 Dice</td>
+        <td><input class="cellInput" type="number" id="p1_chance" min=0 max=30></input></td>
+        <td><input class="cellInput" type="number" id="p2_chance" min=0 max=50></input></td>
+        <td><input class="cellInput" type="number" id="p3_chance" min=0 max=50></input></td>
+        <td><input class="cellInput" type="number" id="p4_chance" min=0 max=50></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Yahtzee bonus</td>
+        <td class="help">Score 100<br>for each &#x2714;</td>
+        <td><input class="cellInput" type="number" id="p1_yb" min=0></input></td>
+        <td><input class="cellInput" type="number" id="p2_yb" min=0></input></td>
+        <td><input class="cellInput" type="number" id="p3_yb" min=0></input></td>
+        <td><input class="cellInput" type="number" id="p4_yb" min=0></input></td>
+      </tr>
+      <tr>
+        <td class="rowlabel">Total</td>
+        <td class="c2">of lower<br />section</td>
+        <td class="help">&#x2192;</td>
+        <td class="calccell" id="p1_lt"></td>
+        <td class="calccell" id="p2_lt"></td>
+        <td class="calccell" id="p3_lt"></td>
+        <td class="calccell" id="p4_lt"></td>
+      </tr>
+      <tr>
+        <td class="rowlabel">Total</td>
+        <td class="c2">of Upper<br />section</td>
+        <td class="help">&#x2192;</td>
+        <td class="calccell" id="p1_ut"></td>
+        <td class="calccell" id="p2_ut"></td>
+        <td class="calccell" id="p3_ut"></td>
+        <td class="calccell" id="p4_ut"></td>
+      </tr>
+      <tr>
+        <td class="rowlabel" colspan="2">Grand Total</td>
+        <td class="help">&#x2192;</td>
+        <td class="calccell" id="p1_gt"></td>
+        <td class="calccell" id="p2_gt"></td>
+        <td class="calccell" id="p3_gt"></td>
+        <td class="calccell" id="p4_gt"></td>
+      </tr>
+    </table>
+  </body>
+</html>
